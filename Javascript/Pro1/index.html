@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript</title>
+	<!-- <script type="text/javascript">
+		function helloall(){
+			// window.alert("Hello All");
+			document.write("Hello All");
+		}
+	</script> -->
+</head>
+<body>
+
+	<p>Click the button to calculate</p>
+	
+	<br>
+	<label>Num 1</label>
+	<input type="text" id="text1" name="text1">
+	<br>
+	<label>Num 2</label>
+	<input type="text" id="text2" name="text2">
+	<br>
+	<button onclick="myFunction()">Calc</button>
+	<p id="demo"></p>
+
+	<script type="text/javascript">
+		//window.alert("Hello All");
+		//document.write("Hello All");
+		function myFunction(){
+			var x = document.getElementById("text1").value;
+			var y = document.getElementById("text2").value;
+			var z = Number(x)+Number(y);
+			document.getElementById("demo").innerHTML = z;
+		}
+
+		//
+	</script>
+	<!-- <input type="button" onclick="helloall()" value="Say Hello"> -->
+</body>
+</html>

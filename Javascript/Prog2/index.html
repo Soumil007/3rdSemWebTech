@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Date</title>
+	<meta charset="utf-8">
+
+	<style type="text/css">
+		body{
+			margin:0;
+			padding: 0;
+		}
+		#txt{
+			font-size: 100px;
+			font-family: serif;
+			text-align: center;
+			margin-top:400px; 
+		}
+	</style>
+
+	<script type="text/javascript">
+		
+		function startTime() {
+		  var today = new Date();
+		  var h = today.getHours();
+		  var m = today.getMinutes();
+		  var s = today.getSeconds();
+		  m = checkTime(m);
+		  s = checkTime(s);
+		  document.getElementById('txt').innerHTML =
+		  h + ":" + m + ":" + s;
+		  var t = setTimeout(startTime, 1000);
+
+
+		}
+		function checkTime(i) {
+		  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+		  return i;
+		}
+		// var month = date.getMonth();
+		// document.write(month);
+	</script>
+
+</head>
+<body onload="startTime()">
+	<div id="txt"></div>
+
+
+	<script type="text/javascript" src="code.js"></script>
+	
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>WEB COUNTER</title>
+	<script type="text/javascript">
+		function pcounter(){
+			var count = localStorage.getItem('xyz');
+			if(count==null){
+				count=0;
+			}
+			count++;
+			localStorage.setItem('xyz',count);
+			document.getElementById("c").innerHTML = count;
+			//localStorage.removeItem('xyz');
+		}
+
+	</script>
+</head>
+<body onload="pcounter()" id="c">
+
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!-- In this program we are going to create a form
+We are going to validate the form using javascript -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form-Validation</title>
+	<script type="text/javascript">
+		function verify() {
+			// body...
+			if(document.form1.name.value===""){
+				alert("please give name");
+				return false;
+			}
+
+			if(document.form1.email.value===""){
+				alert("please give email");
+				return false;
+			}
+
+			if(document.form1.age.value===""){
+				alert("please give age");
+				document.form1.age.focus();
+				return false;
+			}
+
+			if(document.form1.age.value < "18" || document.form1.age.value > "60"){
+				alert("Age must be btw 18 and 60");
+				return false;
+			}
+
+			if(document.form1.gender[0].checked===false && document.form1.gender[1].checked===false){
+				alert("please chose a gender");
+				return false;
+			}
+
+			if(document.form1.lang1.checked===false&&
+				document.form1.lang2.checked===false&&
+				document.form1.lang3.checked===false){
+				alert("please select a lang (Atleast one");
+				return false;
+			}
+
+			if(document.form1.country.value===""){
+				alert("please select a country");
+				return false;
+			}
+
+			if(document.form1.address.value===""){
+				alert("please enter your address");
+				return false;
+			}
+
+			if(document.form1.uname.value===""){
+				alert("please enter your username");
+				return false;
+			}
+
+			if(document.form1.password.value===""){
+				alert("please enter your password");
+				return false;
+			}
+
+			if(document.form1.r_password.value != (document.form1.password.value)){
+				alert("your password doesnt match");
+				document.form1.r_password.value= "";
+				return false;
+			}
+		}
+	</script>
+	<style type="text/css">
+		table, tr,td{
+			border: 1px solid grey;
+			padding: 7px;
+		}
+	</style>
+</head>
+<body>
+	<form method="" action="" name="form1">
+		<table>
+			<tr>
+				<td>Name :</td>
+				<td>
+					<input type="text" name="name" placeholder="Name">
+				</td>
+			</tr>
+			<tr>
+				<td>Email :</td>
+				<td>
+					<input type="email" name="email" placeholder="Email">
+				</td>
+			</tr>
+			<tr>
+				<td>Age :</td>
+				<td>
+					<input type="text" name="age" placeholder="" size="2">
+				</td>
+			</tr>
+			<tr>
+				<td>Gender :</td>
+				<td>
+					<input type="radio" name="gender" value="male">Male
+					<input type="radio" name="gender" value="female">Female
+				</td>
+			</tr>
+			<tr>
+				<td>Language :</td>
+				<td>
+					<input type="checkbox" name="lang1" value="English">English
+					<input type="checkbox" name="lang2" value="Hindi">Hindi
+					<input type="checkbox" name="lang3" value="Bengali">Bengali
+				</td>
+			</tr>
+			<tr>
+				<td>Country :</td>
+				<td>
+					<select name="country">
+						<option value="">--select--</option>
+						<option value="India">India</option>
+						<option value="USA">USA</option>
+						<option value="UK">UK</option>
+						<option value="UAE">UAE</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>Address :</td>
+				<td><textarea name="address" rows="4" cols="30"></textarea></td>
+			</tr>
+			<tr>
+				<td>Username :</td>
+				<td>
+					<input type="text" name="uname" placeholder="username">
+				</td>
+			</tr>
+			<tr>
+				<td>Password :</td>
+				<td>
+					<input type="password" name="password" placeholder="password">
+				</td>
+			</tr>
+			<tr>
+				<td>Retype password :</td>
+				<td>
+					<input type="password" name="r_password" placeholder="password">
+				</td>
+			</tr>
+			<tr>
+				<td style="text-align: center;">
+					<input type="submit" value="Submit" onClick="return (verify());">
+				</td>
+				<td style="text-align: center;">
+					<input type="reset"	>
+				</td>
+			</tr>
+		</table>
+
+
+
+	</form>
+
+</body>
+</html>

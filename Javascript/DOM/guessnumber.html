@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Guess My Number</title>
+</head>
+<body style="text-align: center;">
+
+	<script type="text/javascript">
+
+		var randomNum = Math.floor((Math.random()*99)+1);
+		
+		var speech = "Guess my number from (1 to 100)";
+		
+		function makeNoise(mystery){
+			
+			guess = document.forms.guessform.guessed.value;
+			if(isNaN(guess)){
+				speech="Only Numbers please(1 to 100)"
+			}else{
+				if(guess == mystery){
+					alert("Congo you guessed it right!!\n\n Press this button to new game");
+					//to refersh the current web page.
+					location.reload();
+					speech="";
+				}
+				if(mystery<guess){
+					speech="less than " + guess;
+				}
+				if(mystery>guess){
+					speech="greater than " + guess;
+				}
+				if(guess=""){
+					speech="you didn't guess any thing";
+				}
+					
+			}
+			document.forms.guessform.prompt.value= speech;
+			document.forms.guessform.guessed.value="";
+			document.forms.guessform.guessed.focus();
+
+			
+		}
+	
+	</script>
+	
+	<h2>Guess My Number</h2>
+	
+	<form name="guessform">
+	
+		<input type="text" name="prompt" value="Guess my number from (1 to 100)" size="31" maxlength="40" ><br>
+	
+		<input style="margin-top: 8px;" type="text" name="guessed" size="3" maxlength="3">
+	
+		<input style="margin-top: 8px;" type="button" value="Alert" name="guessButton" onClick="makeNoise(randomNum)">
+	
+	</form>	
+
+</body>
+</html>

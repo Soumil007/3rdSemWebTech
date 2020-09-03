@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>array-html</title>
+<style type="text/css">
+	.inputArea{
+		width: 300px;
+		height: 50px;
+		margin-top: 30px;
+		vertical-align: middle;
+		text-align: center;
+		font-size: 20px;
+		font-family: sans-serif;
+		font-weight: bold;
+	}
+	.button-input{
+		margin-top: 20px;
+		width: 100px;
+	}
+	.fruitArray{
+		font-family: sans-serif;
+		font-size: 20px;
+		font-weight: medium;
+	}
+
+</style>
+</head>
+<body style="text-align: center;">
+	<form action="" method="post" name="Fruit">
+		<input class = "inputArea" type="text" name="fruitName"><br>
+		<input class="button-input" type="button" name="add" value="Add" onClick="Add()">
+		<input class="button-input" type="button" name="remove" value="Remove" onClick="Remove()">
+		<input class="button-input" type="button" name="show" value="Show" onClick="Show()">	
+	</form>
+	<br>
+	<h2>Updated Fruits Array</h2>
+	<p class="fruitArray" id="add"></p>
+	<h2>Popped Fruit</h2>
+	<p class="fruitArray" id="remove"></p>
+	<h2>Fruits Array</h2>
+	<p class="fruitArray" id="demo"></p>
+	<script type = "text/javascript">
+		let fruits = ["Apple","Mango"];
+		function Add(){
+			fruits.push(document.Fruit.fruitName.value);
+			document.getElementById("add").innerHTML=fruits;
+		}
+
+		function Remove(){
+			var poppedFruit = fruits.pop();
+			document.getElementById("remove").innerHTML=poppedFruit;
+		}
+
+		function Show(){
+			document.getElementById("demo").innerHTML=fruits;
+		}
+
+
+	</script>
+
+</body>
+</html>

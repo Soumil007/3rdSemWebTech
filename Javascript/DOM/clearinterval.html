@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Time</title>
+</head>
+<body>
+	<p>Start and Stop Time</p>
+	<p id='demo'></p>
+	<script type="text/javascript">
+		var myVar = setInterval(myTime,1000);
+
+		function myTime(){
+			let d = new Date();
+			let t = d.toLocaleTimeString();
+			document.getElementById("demo").innerHTML = t;
+		}
+
+		
+
+		function start(){
+			var myVar = setInterval(myTime,1000);			
+		}
+
+		function stop(){
+			clearInterval(myVar);
+		}
+
+	</script>
+	<input type="button" name="stop" value="stop" onclick="stop()">
+	<input type="button" name="start" value="start" onclick="start()">
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>page Counter</title>
+	<script type="text/javascript">
+		function pagecounter(){
+			var count = localStorage.getItem('xyz');
+			if(count===null){
+				count=0;
+			}
+			count++;
+			localStorage.setItem('xyz',count);
+			document.getElementById("demo").innerHTML = count;
+		}
+	</script>
+</head>
+<body id="demo" onload="pagecounter()">
+	<div></div>
+
+</body>
+</html>

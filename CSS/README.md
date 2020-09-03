@@ -7,3 +7,7 @@
 <h2>Priority:</h2>
 
 Inline Css > Internal Css > External Css
+
+CSS-BACKGROUND
+
+CSS-FONT
